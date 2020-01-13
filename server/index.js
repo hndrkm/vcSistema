@@ -7,7 +7,7 @@ async function main() {
         app.use(express.static('frontend/build'));
       
         app.get('*', (req, res) => {
-          res.sendFile(path.resolve(__dirname, 'front', 'build', 'index.html'));
+          res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
         });
       }
     await app.listen(app.get('port'));
