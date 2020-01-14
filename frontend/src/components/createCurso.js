@@ -15,7 +15,7 @@ export default class CreateCurso extends Component {
     }
 
     getCursos = async () => {
-        const res = await axios.get('http://localhost:4000/api/cursos');
+        const res = await axios.get('/api/cursos');
         this.setState({
             cursos: res.data
         });
@@ -36,7 +36,7 @@ export default class CreateCurso extends Component {
             cursoname: this.state.cursoname,
             tipo: this.state.tipo
         };
-        await axios.post('http://localhost:4000/api/cursos', newCurso);
+        await axios.post('/api/cursos', newCurso);
         this.setState({ 
             cursoname: '',
             cursocode: '',
@@ -48,7 +48,7 @@ export default class CreateCurso extends Component {
     deleteCurso = async (cursoId) => {
         const response = window.confirm('esta seguro de eliminar el curso?');
         if (response) {
-            await axios.delete('http://localhost:4000/api/cursos/' + cursoId);
+            await axios.delete('/api/cursos/' + cursoId);
             this.getCursos();
         }
     }
