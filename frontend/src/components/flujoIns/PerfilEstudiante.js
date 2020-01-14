@@ -24,10 +24,10 @@ export default class caja extends Component {
             console.log(this.props.match.params.id)
 
 
-            const res = await axios.get('http://localhost:4000/api/estudiantes/' + this.props.match.params.id);
+            const res = await axios.get('/api/estudiantes/' + this.props.match.params.id);
             console.log(res.data)
 
-            const res0 = await axios.get('http://localhost:4000/api/inscripciones');
+            const res0 = await axios.get('/api/inscripciones');
             console.log(res0.data)
             var ins = [];
             for (var i in res0.data) {

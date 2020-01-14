@@ -33,7 +33,7 @@ export default class CreateEstudiante extends Component {
                 telefonoFijo: this.state.telefonoFijo,
                 celular: this.state.celular
             };
-            await axios.put('http://localhost:4000/api/estudiantes/' + this.state._id, updatedEdtudiante);
+            await axios.put('/api/estudiantes/' + this.state._id, updatedEdtudiante);
         } else {
             const newEstudiante = {
                 CI: this.state.CI,
@@ -44,7 +44,7 @@ export default class CreateEstudiante extends Component {
                 telefonoFijo: this.state.telefonoFijo,
                 celular: this.state.celular
             };
-            axios.post('http://localhost:4000/api/estudiantes', newEstudiante);
+            axios.post('/api/estudiantes', newEstudiante);
         }
         window.location.href = '/Estudiantes';
 

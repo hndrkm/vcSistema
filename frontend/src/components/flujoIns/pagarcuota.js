@@ -32,9 +32,9 @@ export default class caja extends Component {
             console.log(this.props.match.params.id)
 
 
-            const res = await axios.get('http://localhost:4000/api/inscripciones/' + this.props.match.params.id);
+            const res = await axios.get('/api/inscripciones/' + this.props.match.params.id);
             console.log(res.data)
-            const res1 = await axios.get('http://localhost:4000/api/cuotas');
+            const res1 = await axios.get('/api/cuotas');
             console.log(res1.data)
             var cuotas1 = [];
             for (var i in res1.data) {
@@ -94,8 +94,8 @@ export default class caja extends Component {
             precioMes: this.state.precioMes,
             precioMatricula: this.state.precioMatricula,
         };
-        await axios.put('http://localhost:4000/api/inscripciones/' + this.state._id, updatedInscripcion);
-        await axios.post('http://localhost:4000/api/cuotas', newCuota);
+        await axios.put('/api/inscripciones/' + this.state._id, updatedInscripcion);
+        await axios.post('/api/cuotas', newCuota);
 
 
     }

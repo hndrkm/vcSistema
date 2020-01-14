@@ -13,7 +13,7 @@ export default class Estudiantes extends Component {
     }
 
     getEstudiantes = async () => {
-        const res = await axios.get('http://localhost:4000/api/estudiantes');
+        const res = await axios.get('/api/estudiantes');
         this.setState({
             estudiantes: res.data
         });
@@ -21,7 +21,7 @@ export default class Estudiantes extends Component {
     deleteEstudiante = async (estudianteId) => {
         const response = window.confirm('esta segurro de boorar?');
         if (response) {
-            await axios.delete('http://localhost:4000/api/estudiantes/' + estudianteId);
+            await axios.delete('/api/estudiantes/' + estudianteId);
             this.getEstudiantes();
         }
     }
@@ -32,7 +32,7 @@ export default class Estudiantes extends Component {
                 
             <table class="table table-borderless table-dark">
                 <thead>
-                    <tr>
+                    <tr>0
                         <th scope="col">#</th>
                         <th scope="col">nombre</th>
                         <th scope="col">CI</th>

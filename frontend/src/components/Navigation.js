@@ -19,15 +19,6 @@ export default class Navigation extends Component {
                                 <Link to="/Menu" className="nav-link">Menu</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/cursos" className="nav-link">Cursos</Link>
-                            </li>
-                            <li className="nav-item active">
-                                <Link to="/createInscripciones" className="nav-link">Inscripcion</Link>
-                            </li>
-                            <li className="nav-item active">
-                                <Link to="/Inscripciones" className="nav-link">Inscripciones</Link>
-                            </li>
-                            <li className="nav-item active">
                                 <Link to="/flujo" className="nav-link">Inscribir</Link>
                             </li>
                         

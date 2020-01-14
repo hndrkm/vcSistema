@@ -16,14 +16,14 @@ export default class CreateInscripcion extends Component {
     }
 
     async componentDidMount() {
-        const resEs = await axios.get('http://localhost:4000/api/estudiantes');
+        const resEs = await axios.get('/api/estudiantes');
         if (resEs.data.length > 0) {
             this.setState({
                 estudiantes: resEs.data,
                 estudiante:resEs.data[0].nombre
             })
         }
-        const resCu = await axios.get('http://localhost:4000/api/cursos');
+        const resCu = await axios.get('/api/cursos');
         if (resCu.data.length > 0) {
             this.setState({
                 cursos: resCu.data,
@@ -43,7 +43,7 @@ export default class CreateInscripcion extends Component {
                 estudiante: this.state.estudiante,
                 curso: this.state.curso
             };
-            await axios.put('http://localhost:4000/api/inscripciones/' + this.state._id, updatedInscripcion);
+            await axios.put('/api/inscripciones/' + this.state._id, updatedInscripcion);
         } else {
             const newInscripcion = {
                 curso: this.state.curso,
@@ -55,7 +55,7 @@ export default class CreateInscripcion extends Component {
                 
                 };
             console.log(newInscripcion)
-            axios.post('http://localhost:4000/api/inscripciones', newInscripcion);
+            axios.post('/api/inscripciones', newInscripcion);
         }
         //window.location.href = '/Inscripciones';
 
