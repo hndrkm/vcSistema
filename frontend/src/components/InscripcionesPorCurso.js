@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-const servidor='http://localhost:4000';
 export default class caja extends Component {
 
     state = {
@@ -16,19 +15,19 @@ export default class caja extends Component {
         this.getEstudiantes();
     }
     getEstudiantes = async () => {
-        const res = await axios.get(servidor+'/api/estudiantes');
+        const res = await axios.get('/api/estudiantes');
         this.setState({
             estudiantes: res.data
         });
     }
     getInscripciones = async () => {
-        const res = await axios.get(servidor+'/api/inscripciones');
+        const res = await axios.get('/api/inscripciones');
         this.setState({
             inscripciones: res.data
         });
     }
     getCursos = async () => {
-        const res = await axios.get(servidor+'/api/cursos');
+        const res = await axios.get('/api/cursos');
         this.setState({
             cursos: res.data
         });
@@ -36,7 +35,7 @@ export default class caja extends Component {
     deleteInscripciones = async (inscripcionId) => {
         const response = window.confirm('esta segurro de boorar?');
         if (response) {
-            await axios.delete(servidor+'/api/inscripciones/' + inscripcionId);
+            await axios.delete('/api/inscripciones/' + inscripcionId);
             this.getInscripciones();
         }
     }

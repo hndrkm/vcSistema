@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-const servidor='http://localhost:4000';
 export default class Inscripciones extends Component {
 
     state = {
@@ -13,7 +12,7 @@ export default class Inscripciones extends Component {
     }
 
     getInscripciones = async () => {
-        const res = await axios.get(servidor+'/api/inscripciones');
+        const res = await axios.get('/api/inscripciones');
         this.setState({
             inscripciones: res.data
         });
@@ -21,7 +20,7 @@ export default class Inscripciones extends Component {
     deleteInscripciones = async (inscripcionId) => {
         const response = window.confirm('esta segurro de boorar?');
         if (response) {
-            await axios.delete(servidor+'/api/inscripciones/' + inscripcionId);
+            await axios.delete('/api/inscripciones/' + inscripcionId);
             this.getInscripciones();
         }
     }

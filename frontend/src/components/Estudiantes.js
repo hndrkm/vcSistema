@@ -43,12 +43,11 @@ export default class Estudiantes extends Component {
                 <tbody>
                 {
                     this.state.estudiantes.map(estudiante => (
-                        <tr className="" key={estudiante._id}>
+                        <tr key={estudiante._id}>
                             <td>{this.state.cont = this.state.cont+1}</td>
                             <td>{estudiante.nombre+ " "}
                                    </td>
                             <td> {estudiante.CI+ " "}</td>
-                            <td></td>
                             <td>
                             <button type="button" class="btn btn-outline-info">INSCRIBIR</button>
                                 <button type="button" class="btn btn-outline-warning">Editar</button>
