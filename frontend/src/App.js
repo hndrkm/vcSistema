@@ -20,6 +20,10 @@ import Menu from './components/Menu'
 import ingresos from './components/RegIngresos'
 import cuotas from './components/RegCuota'
 import caja from './components/pruebas/abrirCaja'
+import cajadetalle from './components/pruebas/caja'
+import Productos from './components/pruebas/createProducto'
+
+import recibo from './components/flujoIngreso/recibo'
 
 import './App.css';
 class App extends React.Component {
@@ -41,8 +45,11 @@ render() {
         <Route path="/Perfil/:id" component={flujo2} />
         <Route path="/cuota/:id" component={flujo3} />
         
+        <Route path="/productos" component={Productos} />
+        <Route path="/recibo" component={recibo} />
+        
 
-        <Route path="/" exact component={NotesList} />
+        <Route path="/" exact component={Menu} />
         <Route path="/edit/:id" component={CreateNote} />
         <Route path="/create" component={CreateNote} />
         <Route path="/user" component={CreateUser} />
@@ -55,6 +62,7 @@ render() {
         <Route path="/ingresos" component={ingresos} />
         <Route path="/cuotas" component={cuotas} />
         <Route path="/caja" component={caja} />
+        <Route path="/cajaDetalle" component={cajadetalle} />
         <Route path="/inpC" component={InscripcionesPorCurso} />
       </div>
     </Router>

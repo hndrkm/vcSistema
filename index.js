@@ -23,15 +23,17 @@ app.use('/api/users', require('./server/routes/users'));
 app.use('/api/cuotas', require('./server/routes/cuota'));
 app.use('/api/perfil', require('./server/routes/perfil'));
 
-
-
+app.use('/api/caja', require('./server/routes/caja'));
+app.use('/api/productos', require('./server/routes/producto'));
 async function main() {
-    app.use(express.static('./frontend/build'));
-    console.log("estoy wen preduccion");
+  
+    app.use(express.static('frontend/build'));
+
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
       console.log(res);
     });
+  
   
     await app.listen(app.get('port'));
     console.log('Server on port', app.get('port'));

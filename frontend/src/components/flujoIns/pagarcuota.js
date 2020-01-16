@@ -46,9 +46,7 @@ export default class caja extends Component {
                 }
                 console.log(cuotas1);
             }
-            {
 
-            }
             this.setState({
                 fechaInicio: res.data.fechaInicio,
                 fechaInscripcion: res.data.fechaInscripcion,
@@ -69,6 +67,23 @@ export default class caja extends Component {
             });
 
         }
+    }
+    getCuotas= async () => {
+        const res1 = await axios.get('/api/cuotas');
+            console.log(res1.data)
+            var cuotas1 = [];
+            for (var i in res1.data) {
+                var insc = {};
+                console.log(res1.data[i].estudiante)
+                if (res1.data[i].inscripcion == this.props.match.params.id) {
+                    insc = res1.data[i];
+                    cuotas1.push(insc);
+                }
+                console.log(cuotas1);
+            }
+            this.setState({
+                cuotas: cuotas1
+            });
     }
 
     onSubmit = async (e) => {
@@ -96,8 +111,7 @@ export default class caja extends Component {
         };
         await axios.put('/api/inscripciones/' + this.state._id, updatedInscripcion);
         await axios.post('/api/cuotas', newCuota);
-
-
+        this.getCuotas();
     }
     onInputChange = (e) => {
         this.setState({

@@ -5,6 +5,7 @@ const ingresoSchema = new Schema(
         codigo: {type:Number,
         unique: true,
         required: true},
+        caja: String,
         objeto: String,
         fecha: Date,
         total: Number,

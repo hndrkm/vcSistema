@@ -69,7 +69,9 @@ export default class caja extends Component {
                             <td>{inscripcion.estudiante}</td>
                             <td>{inscripcion.fechaInicio + " "}</td>
                             <td>{inscripcion.cuotas}</td>
-                            <td>@mdo</td>
+                            <td></td> <Link to={"/Perfil/"} className="btn btn-secondary">
+                                        VER
+                                </Link>
                         </tr>)
                         }
                         return ;

@@ -32,7 +32,7 @@ export default class Estudiantes extends Component {
                 
             <table class="table table-borderless table-dark">
                 <thead>
-                    <tr>0
+                    <tr>
                         <th scope="col">#</th>
                         <th scope="col">nombre</th>
                         <th scope="col">CI</th>

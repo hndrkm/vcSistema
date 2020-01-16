@@ -11,8 +11,8 @@ export default class CreateEstudiante extends Component {
         apMaterno: '',
         fechaNacimiento: new Date(),
         correoElectronico: '',
-        telefonoFijo: 0,
-        celular: 0,
+        telefonoFijo: '',
+        celular: '',
         estudiantes: [],
         editing: false,
 
